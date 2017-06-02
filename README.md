@@ -4,10 +4,12 @@
 
 ## Guide
 1. `git clone https://github.com/adonis-china/adonis-admin.git`
-1. `cd adonis-admin`
-1. `npm install`
-1. `npm run serve:dev`
-1. Open  `http://localhost:3335` (or another port) in your browser.
+1. `cd adonis-admin && npm install && npm run serve:dev` start the api server
+1. `cd adminify`
+1. `cp src/config.sample.js src/config.js`  //use `copy` on windows
+1. `npm install && npm run dev` //start the client
+1. Open  `http://localhost:8080` (or another port) in your browser.
+> use `cnpm` instead `npm` in china
 
 ## UI Screenshots
 |  |  |

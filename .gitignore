@@ -3,3 +3,6 @@ storage
 !.gitkeep
 .env
 npm-debug.log
+.vscode
+.idea
+

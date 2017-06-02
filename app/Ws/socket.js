@@ -15,3 +15,26 @@
 */
 
 const Ws = use('Ws')
+
+const Mock = require('mockjs')
+
+Ws.channel('/chat', function (socket) {
+
+  socket.on('message', function * (payload) {
+    const name = Mock.mock('@name')
+    console.log('message: ' +payload)
+    socket.toEveryone().emit('message', {
+      avatar: Mock.Random.image('80x80', Mock.mock('@color'), '#fff', name.substr(0, 1)),
+      title: name,
+      time: new Date(),
+      subtitle: payload
+    })
+  })
+  
+})
+
+Ws.channel('/system', (socket) => {
+  socket.on('menu', function * (payload) {
+
+  })
+})

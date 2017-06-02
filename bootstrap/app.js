@@ -11,6 +11,7 @@
 |
 */
 const providers = [
+  'adonis-antl/providers/AntlProvider',
   'adonis-framework/providers/ConfigProvider',
   'adonis-framework/providers/EnvProvider',
   'adonis-framework/providers/EventProvider',
@@ -29,7 +30,10 @@ const providers = [
   'adonis-lucid/providers/FactoryProvider',
   'adonis-middleware/providers/AppMiddlewareProvider',
   'adonis-auth/providers/AuthManagerProvider',
-  'adonis-websocket/providers/WsProvider'
+  'adonis-websocket/providers/WsProvider',
+  'adonis-filesystem/providers/FilesystemProvider',
+  'adonis-storage/providers/StorageProvider',
+  'adonis-validation-provider/providers/ValidatorProvider'
 ]
 
 /*
@@ -76,7 +80,12 @@ const aliases = {
   Route: 'Adonis/Src/Route',
   Schema: 'Adonis/Src/Schema',
   View: 'Adonis/Src/View',
-  Ws: 'Adonis/Addons/Ws'
+  Ws: 'Adonis/Addons/Ws',
+  File: 'AdonisFilesystem/Filesystem',
+  Storage: 'Adonis/Addons/Storage',
+  Validator: 'Adonis/Addons/Validator',
+  Antl: 'Adonis/Addons/Antl',
+  Formats: 'Adonis/Addons/AntlFormats'
 }
 
 /*

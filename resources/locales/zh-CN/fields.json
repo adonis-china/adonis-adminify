@@ -1,0 +1,17 @@
+{
+  "user.id": "ID",
+  "user.username": "用户名",
+  "user.nickname": "昵称",
+  "user.mobile": "手机号",
+  "user.avatar": "头像",
+  "user.created_at": "注册时间",
+
+  "post.id": "ID",
+  "post.title": "标题",
+  "post.user_id": "用户",
+  "post.type_id": "类别",
+  "post.body": "内容",
+  "post.created_at": "创建时间",
+
+  "type.name": "名称"
+}

@@ -12,6 +12,9 @@
 */
 
 const Factory = use('Factory')
+const Mock = require('mockjs')
+const Random = Mock.Random
+const mock = Mock.mock
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +24,57 @@ const Factory = use('Factory')
 | this blueprint inside your seeds to generate dummy data.
 |
 */
-Factory.blueprint('App/Model/User', (fake) => {
+Factory.blueprint('App/Model/User', () => {
   return {
-    username: fake.username(),
-    email: fake.email(),
-    password: fake.password()
-  }
+    username: mock('@string("lower", 6)'),
+    nickname: mock('@name'),
+    mobile: mock(/1[358]\d{9}/),
+    email: mock('@email'),
+    avatar: Random.image('128x128'),
+    password: '123456',
+    created_at: mock('@datetime'),
+    updated_at: mock('@datetime'),
+  };
+
 })
+
+Factory.blueprint('App/Model/Post', () => {
+  return {
+    user_id: mock('@integer(1,10)'),
+    type_id: mock('@integer(1,4)'),
+    title: mock('@title(10,30)'),
+    body: mock('@paragraph(1, 3)'),
+    published_at: mock('@datetime'),
+    created_at: mock('@datetime'),
+    updated_at: mock('@datetime'),
+  };
+
+})
+
+Factory.blueprint('App/Model/Comment', () => {
+  return {
+    user_id: mock('@integer(1,10)'),
+    post_id: mock('@integer(1,100)'),
+//    reply_id: mock('@integer(1,100)'),
+    body: mock('@paragraph(1, 3)'),
+    created_at: mock('@datetime'),
+    updated_at: mock('@datetime'),
+  };
+})
+
+
+Factory.blueprint('App/Model/Tag', () => {
+  return {
+    user_id: mock('@integer(1,5)'),
+    name: mock('@title(2, 4)')
+  };
+})
+
+Factory.blueprint('App/Model/Type', () => {
+  return {
+    name: mock('@title(2, 4)')
+  };
+})
+
+
+

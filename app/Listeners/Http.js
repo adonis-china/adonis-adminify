@@ -3,6 +3,10 @@
 const Env = use('Env')
 const Youch = use('youch')
 const Http = exports = module.exports = {}
+const Antl = use('Antl')
+const inflect = require('i')()
+
+const Database = use('Database')
 
 /**
  * handle errors occured during a Http request.
@@ -11,9 +15,18 @@ const Http = exports = module.exports = {}
  * @param  {Object} request
  * @param  {Object} response
  */
-Http.handleError = function * (error, request, response) {
+Http.handleError = function* (error, request, response) {
   const status = error.status || 500
+  const type = request.accepts('json', 'html')
 
+  if (request.ajax() || type == 'json') {
+    response.status(status).send({
+      status: status,
+      stack: error.stack,
+      message: error.message
+    })
+    return
+  }
   /**
    * DEVELOPMENT REPORTER
    */
@@ -30,7 +43,7 @@ Http.handleError = function * (error, request, response) {
    * PRODUCTION REPORTER
    */
   console.error(error.stack)
-  yield response.status(status).sendView('errors/index', {error})
+  yield response.status(status).sendView('errors/index', { error })
 }
 
 /**
@@ -38,4 +51,13 @@ Http.handleError = function * (error, request, response) {
  * starting http server.
  */
 Http.onStart = function () {
+  Antl.reload()
+  global.t = function (key, params) {
+    //fallback
+    if (Antl.get(key) === key) {
+      return inflect.titleize(key.split('.').pop())
+    }
+    return Antl.formatMessage(key, params)
+  }
+  Database.on('sql', console.log)
 }

@@ -14,14 +14,25 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "adonis-ace": "^3.0.7",
+   "adonis-ace": "^3.0.7",
+    "adonis-antl": "^1.0.5",
     "adonis-auth": "^1.0.5",
     "adonis-commands": "^2.1.5",
+    "adonis-filesystem": "^0.3.0",
     "adonis-fold": "^3.0.3",
     "adonis-framework": "^3.0.10",
     "adonis-lucid": "^3.0.14",
     "adonis-middleware": "^1.0.11",
+    "adonis-storage": "^0.0.4",
+    "adonis-validation-provider": "^3.0.5",
     "adonis-websocket": "^1.0.3",
+    "axios": "^0.16.1",
+    "i": "^0.3.5",
+    "marked": "^0.3.6",
+    "mysql": "^2.13.0",
+    "sqlite3": "^3.1.8",
+    "vue-timeago": "^3.3.1",
+    "simplemde": "^1.11.2",
     "youch": "^2.0.4"
   },
   "standard": {
@@ -34,6 +45,7 @@
     "App": "./app"
   },
   "devDependencies": {
+    "mockjs": "^1.0.1-beta3",
     "nodemon": "^1.11.0",
     "standard": "^10.0.1"
   }

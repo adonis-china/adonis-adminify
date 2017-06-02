@@ -16,5 +16,30 @@
 */
 
 const Route = use('Route')
+const inflect = require('i')()
 
 Route.on('/').render('welcome')
+
+
+Route.group('admin/api', function () {
+	const prefix = 'Admin/Api/'
+	const resources = ['posts', 'users', 'types', 'comments', 'settings']
+
+	Route.get('/menu', `${prefix}UserController.menu`).as('menu')
+	Route.post('/login', `${prefix}UserController.login`)
+	
+	for (let k in resources) {
+		let resource = resources[k]
+		let className = inflect.classify(resource)
+		Route.get(`/${resource}/grid`, `${prefix}${className}Controller.grid`)
+		Route.get(`/${resource}/form`, `${prefix}${className}Controller.form`)
+		Route.resource(`/${resource}`, `${prefix}${className}Controller`)
+	}
+
+	Route.get(`/:resource/grid`, `${prefix}RestController.grid`)
+	Route.get(`/:resource/form`, `${prefix}RestController.form`)
+	Route.resource(`/:resource`, `${prefix}RestController`)
+	
+
+
+}).prefix('admin/api')
