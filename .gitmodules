@@ -1,0 +1,3 @@
+[submodule "adminify"]
+	path = adminify
+	url = git@github.com:wxs77577/adminify.git
