@@ -23,7 +23,7 @@ Route.on('/').render('welcome')
 
 Route.group('admin/api', function () {
 	const prefix = 'Admin/Api/'
-	const resources = ['posts', 'users', 'types', 'comments', 'settings']
+	const resources = ['posts', 'users', 'types', 'comments', 'settings', 'pages']
 
 	Route.get('/menu', `${prefix}UserController.menu`).as('menu')
 	Route.post('/login', `${prefix}UserController.login`)

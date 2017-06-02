@@ -143,7 +143,7 @@ class RestController {
     return global.request.input('fields', 'id').split(',')
   }
   get formFields() {
-    return global.request.input('fields').split(',')
+    return global.request.input('fields', '').split(',')
   }
 
   * gridData() {
