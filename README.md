@@ -2,12 +2,14 @@
 > An admin dashboard application based on [AdonisJs](http://adonisjs.com/) and [Adminify](https://github.com/wxs77577/adminify)(based on [Vuetify](https://vuetifyjs.com/)), see more at [Adonis China](https://adonis-china.org/).
 > Keywords: NodeJs, VueJs, AdonisJs, ORM, Relation, SQLite, MySQL, Middleware, Restful, CRUD, Material design
 
-## Guide
+## Getting Start
+### Server Side
 1. `git clone https://github.com/adonis-china/adonis-admin.git`
 1. `cd adonis-admin && npm install && npm run serve:dev` start the api server
-1. `cd adminify`
-1. `cp src/config.sample.js src/config.js`  //use `copy` on windows
-1. `npm install && npm run dev` //start the client
+1. `node ace migration:refresh --seed` fill database
+### Client Side
+1. `cd adminify && cp src/config.sample.js src/config.js`  use `copy` on windows
+1. `npm install && npm run dev` start the client
 1. Open  `http://localhost:8080` (or another port) in your browser.
 > use `cnpm` instead `npm` in china
 

@@ -8,9 +8,9 @@ class DummySeeder {
 
   * run () {
 
-    // yield Factory.model('App/Model/User').create(10)
+    yield Factory.model('App/Model/User').create(37)
 
-    const posts = yield Factory.model('App/Model/Post').create(100)
+    const posts = yield Factory.model('App/Model/Post').create(27)
     posts.each(function * (post) {
       let rnd = Mock.mock({
         'ids|1': [
@@ -27,10 +27,10 @@ class DummySeeder {
     })
 
     yield Factory.model('App/Model/Comment').reset()
-    const comments = yield Factory.model('App/Model/Comment').create(200)
+    const comments = yield Factory.model('App/Model/Comment').create(37)
     comments.each(function * (comment) {
       if (Mock.mock('@integer(0,2)')) {
-        comment.reply_id = Mock.mock('@integer(1,100)')
+        comment.reply_id = Mock.mock('@integer(1,10)')
         yield comment.save()
       }
     })  }

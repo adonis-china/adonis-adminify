@@ -5,8 +5,8 @@ const RestController = require('./RestController')
 const Comment = use('App/Model/Comment')
 
 class CommentController extends RestController {
-  get model() {
-    return Comment
+  get resource() {
+    return 'comments'
   }
 
   get expand() {

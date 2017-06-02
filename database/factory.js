@@ -42,7 +42,7 @@ Factory.blueprint('App/Model/Post', () => {
   return {
     user_id: mock('@integer(1,10)'),
     type_id: mock('@integer(1,4)'),
-    title: mock('@title(10,30)'),
+    title: mock('@title'),
     body: mock('@paragraph(1, 3)'),
     published_at: mock('@datetime'),
     created_at: mock('@datetime'),
@@ -54,9 +54,9 @@ Factory.blueprint('App/Model/Post', () => {
 Factory.blueprint('App/Model/Comment', () => {
   return {
     user_id: mock('@integer(1,10)'),
-    post_id: mock('@integer(1,100)'),
+    post_id: mock('@integer(1,20)'),
 //    reply_id: mock('@integer(1,100)'),
-    body: mock('@paragraph(1, 3)'),
+    body: mock('@sentence'),
     created_at: mock('@datetime'),
     updated_at: mock('@datetime'),
   };
