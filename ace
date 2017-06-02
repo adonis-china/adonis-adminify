@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+'use strict'
+
+const kernel = require('./bootstrap/kernel')
+kernel()
