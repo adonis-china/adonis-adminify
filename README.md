@@ -13,6 +13,7 @@
 1. `git submodule update --recursive --remote --init`  pull submodule
 1. `cd adminify`
 1. `cp src/config.sample.js src/config.js`  use `copy` on windows
+1. Change `debug.mock` to `false` in `src/config.js` 
 1. `npm install && npm run dev` start the client
 1. Open  `http://localhost:8080` (or another port) in your browser.
 > use `cnpm` instead `npm` in china
