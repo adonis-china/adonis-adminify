@@ -10,7 +10,7 @@
 1. `npm install && npm run serve:dev` start the api server
 1. `./ace migration:refresh --seed` fill database (use `node ace` on windows)
 ### Client Side
-1. `git submodule init && git submodule update`  pull submodule
+1. `git submodule update --recursive --remote --init`  pull submodule
 1. `cd adminify`
 1. `cp src/config.sample.js src/config.js`  use `copy` on windows
 1. `npm install && npm run dev` start the client
