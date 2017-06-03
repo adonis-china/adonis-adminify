@@ -5,11 +5,14 @@
 ## Getting Start
 ### Server Side
 1. `git clone https://github.com/adonis-china/adonis-admin.git`
-1. `cd adonis-admin && npm install && npm run serve:dev` start the api server
+1. `cd adonis-admin`
+1. `cp .env.example .env`
+1. `npm install && npm run serve:dev` start the api server
 1. `./ace migration:refresh --seed` fill database (use `node ace` on windows)
 ### Client Side
 1. `git submodule init && git submodule update`  pull submodule
-1. `cd adminify && cp src/config.sample.js src/config.js`  use `copy` on windows
+1. `cd adminify`
+1. `cp src/config.sample.js src/config.js`  use `copy` on windows
 1. `npm install && npm run dev` start the client
 1. Open  `http://localhost:8080` (or another port) in your browser.
 > use `cnpm` instead `npm` in china
